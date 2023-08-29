@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %}Todo list - django{% endblock title%}
+{% block body %}
+<h1>Todo List</h1>
+
+<table>
+  <tr>
+    <th>Item</th>
+  </tr>
+  <tr>
+    {% for task in object %}
+    <td>{{task.title}}</td>
+    <td><a href="{% url 'task' task.id %}">view</a></td>
+  </tr>
+  {%empty%}
+  <p>there is no todo</p>
+  {% endfor %}
+</table>
+{% endblock body %}
