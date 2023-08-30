@@ -1,0 +1,9 @@
+{% block title %}Create todo{% endblock title %} {% block body %}
+<h1>Create Todo</h1>
+<a href="{%url 'tasks' %}">todo home</a>
+<form action="" method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Create</button>
+</form>
+
+{% endblock body %}
