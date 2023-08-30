@@ -16,3 +16,9 @@ class Task(models.Model):
 
     class Meta:
         ordering = ["completed"]
+
+
+# class MyModel(models.Model):
+#     title = models.CharField(max_length=155)
+#     description = models.TextField(null=True, blank=True)
+#     completed = models.BooleanField(default=False)
