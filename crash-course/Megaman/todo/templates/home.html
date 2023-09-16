@@ -1,20 +1,21 @@
-{% extends 'base.html' %} {% block title %}Todo list - django{% endblock title%}
+{% extends 'base.html' %}
+{% block title %}Todo list - django{% endblock title%}
 {% block body %}
 <h1>Todo List</h1>
-<a href="{% url 'create' %}">create</a>
-<table>
-  <tr>
-    <th>Item</th>
-  </tr>
-  <tr>
-    {% for task in object %}
-    <td>{{task.title}}</td>
-    <td><a href="{% url 'task' task.id %}">view</a></td>
-    <td><a href="{% url 'update' task.id %}">update</a></td>
-    <td><a href="{% url 'delete' task.id %}">delete</a></td>
-  </tr>
-  {%empty%}
-  <p>there is no todo</p>
-  {% endfor %}
-</table>
+{% for task in object %}
+  <a href="{% url 'task' task.id %}">
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{task.title}}</h5>
+    <p class="card-text">
+      {% if task.description %}{{task.description}}{% else %}...{% endif %}
+    </p>
+    <a href="{% url 'update' task.id %}" class="card-link btn btn-primary">update</a>
+    <a href="{%url 'delete' task.id %}" class="card-link btn btn-danger">Delete</a>
+  </div>
+  </a>
+{% empty %}
+<p>there is no todo</p>
+{% endfor %}
+</div>
 {% endblock body %}

@@ -1,4 +1,6 @@
-{% block title %}Create todo{% endblock title %} {% block body %}
+{% extends 'base.html' %} 
+{% block title %}Create todo{% endblock title %}
+{% block body %}
 <h1>Create Todo</h1>
 <a href="{%url 'tasks' %}">todo home</a>
 <form action="" method="post">
