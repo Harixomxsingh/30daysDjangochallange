@@ -10,3 +10,15 @@
 main {
   font-family: "Barlow", sans-serif;
 }
+.infinite-scroll:hover {
+  -webkit-box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.47) !important;
+  -moz-box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.47) !important;
+  box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.47) !important;
+  transition: all ease-in-out 0.2s;
+}
+@media only screen and (max-width: 786px) {
+  .author,
+  .date {
+    font-size: 14px;
+  }
+}
