@@ -10,3 +10,10 @@
 main {
   font-family: "Barlow", sans-serif;
 }
+
+@media only screen and (max-width: 786px) {
+  .author,
+  .date {
+    font-size: 14px;
+  }
+}
