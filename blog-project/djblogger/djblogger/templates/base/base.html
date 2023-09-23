@@ -12,6 +12,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    {% comment %} {% load static %} {% endcomment %}
+    <script src="{% static 'htmx/htmx.min.js' %}" defer></script>
+    {% comment %} <script src="{% static 'js/htmx/debug.js' %}" defer></script> {% endcomment %}
   </head>
   <body>
     <header>{% include "./partials/_header.html" %}</header>
