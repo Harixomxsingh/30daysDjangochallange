@@ -1,1 +1,53 @@
-div.ro
+{% for post in posts %}
+<a href="" class="text-decoration-none">
+  {% if forloop.last %}
+  <div class="card border-0 pb-3 pb-sm-5 mb-sm-5" hx-trigger="revealed" hx-get="{% url 'Home' %}?page={{page_obj.number|add:1}}" hx-swap="afterend">
+    <div class="card border-0 pb-3 pb-sm-5 mb-sm-5">
+      <div class="row">
+        <div class="col-8">
+          <div class="card-body p-0">
+            <div class="mb-2 author">{{post.author}}</div>
+            <h3 class="fw-bold">{{post.title|truncatechars:60}}</h3>
+            <div class="text-muted d-none d-ld-block pb-3 fs-6">
+              {{post.subtitle}}
+            </div>
+            <div class="text-muted date">{{post.updated_at|date:"M d"}}</div>
+          </div>
+        </div>
+        <div class="col-4">
+          <img
+            src="https://picsum.photos/205/115"
+            alt="{{post.subtitle}}"
+            class="img-fluid float-end my-5 d-block"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="card border-0 pb-3 pb-sm-5 mb-sm-5">
+    <div class="card border-0 pb-3 pb-sm-5 mb-sm-5">
+      <div class="row">
+        <div class="col-8">
+          <div class="card-body p-0">
+            <div class="mb-2 author">{{post.author}}</div>
+            <h3 class="fw-bold">{{post.title|truncatechars:60}}</h3>
+            <div class="text-muted d-none d-ld-block pb-3 fs-6">
+              {{post.subtitle}}
+            </div>
+            <div class="text-muted date">{{post.updated_at|date:"M d"}}</div>
+          </div>
+        </div>
+        <div class="col-4">
+          <img
+            src="https://picsum.photos/205/115"
+            alt="{{post.subtitle}}"
+            class="img-fluid float-end my-5 d-block"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</a>
+{% endfor %}
